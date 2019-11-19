@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SICNU 教 务 处 登 陆 </title>
+    <style>
+        * {
+            margin: 20;
+            padding: 20;
+
+        }
+
+        body {
+            width: 400px;
+            height: 400px;
+            /* background:-webkit-linear-gradient(bottom,#FF66CC,#FF3399,#CC00FF,#9900FF,#6633FF,#3399FF,#66FFFF,#66FF99,#99FF00,#FFFF66,white); */
+            background: -webkit-linear-gradient(bottom, #6633FF, #3399FF, white);
+        }
+
+        div {
+            line-height: 30px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        p {
+            line-height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+ 
+        #login_click{ margin-top:40px; height:40px;}
+        #login_click a 
+        {
+            
+    
+            text-decoration:none;
+            background:#0bafd8;
+            color:#f2f2f2;
+            
+            padding: 5px 20px 5px 20px;
+            font-size:16px;
+            font-family: 微软雅黑,宋体,Arial,Helvetica,Verdana,sans-serif;
+            font-weight:bold;
+            border-radius:3px;
+            
+            -webkit-transition:all linear 0.30s;
+            -moz-transition:all linear 0.30s;
+            transition:all linear 0.30s;
+        
+        }
+        #login_click a:hover { background:#4489f8; }
+    </style>
+</head>
+<body>
+
+    <div id="container" style="margin-top:25px">
+        <!-- <img src="/images/sicnu.png" alt="Pulpit rock" width="30" height="30"> -->
+        SICNU 教 务 处 登 陆 
+    </div>
+    <p line-height=10px font-size=10px>填写账号和密码，一键登陆！</p>
+    <p></p>
+    
+    <p style="margin-top:25px">账号：<input id="username" maxlength="11" type="text/javascript" name="username" /> </p>
+    <p style="margin-top:25px">密码：<input id="password" maxlength="11" type="password" name="password" /> </p>
+    
+    <p>
+        <!-- <link rel="stylesheet" href="css/login.css" type="text/css" /> -->
+        <div id="login_click">
+                <a id="jwc" href="#">去教务处！</a>
+                <a id="user" href="#">去修改账号密码！</a>
+        </div>  
+    </p>
+</body>
+<!-- script最好是放在body后面 -->
+
+<script src='js/popup.js'></script>
+</html>

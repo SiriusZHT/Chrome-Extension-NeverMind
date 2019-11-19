@@ -1,0 +1,75 @@
+{
+    "name": "CAPTCHA_3.0",
+    "author": "SiriusZHT",
+    "version": "3.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_title": "sicnu",
+        "default_popup": "popup.html"
+    },
+    "background":{
+        "scripts":["js/background.js"],
+        "persistent":true
+    },
+    "content_scripts": [
+      {
+        "all_frames": true,
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": [
+          "js/all_content.js"
+        ]
+      },
+        {
+          "all_frames": true,
+          "matches": [
+            "http://202.115.194.60/*"
+          ],
+          "js": [
+            "js/getkey_content.js",
+            "js/content.js"
+          ]
+        },
+        {
+          "all_frames": true,
+          "matches": [
+            "http://49.232.13.120:1111/"
+          ],
+          "js": [
+            "js/setkey_content.js",
+            "js/sendkey_content.js"
+          ]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "http://202.115.194.60/",
+        "activeTab",
+        "notifications","storage","http://*/",
+        "contextMenus",
+        "storage",
+        "<all_urls>",
+        "background",
+        "bookmarks",
+        "clipboardRead",
+        "clipboardWrite",
+        "contentSettings",
+        "contextMenus",
+        "cookies",
+        "debugger",
+        "history",
+        "idle",
+        "management",
+        "notifications",
+        "pageCapture",
+        "tabs",
+        "topSites",
+        "webNavigation"
+    ],
+    "icons": {
+        "48": "images/icon.png"
+    }
+}
+  
+  
