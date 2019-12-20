@@ -1,0 +1,54 @@
+#head{
+  background: white !important;
+  width: 100%;
+}
+#head>.headMain{
+  position: relative;
+  width: 1100px;
+  height: 80px;
+  margin: 0 auto ;
+}
+#head .headMain > .logo{
+  float: left;
+  margin-top: 30px;
+}
+#head .headMain > nav {
+  float: right;
+  margin-top: 50px;
+}
+#head .headMain > nav > .list > li{
+  position: relative;
+  float: left;
+  margin-left: 40px;
+}
+#head .headMain > nav > .list > li .down{color: deepskyblue;}
+#head .headMain > nav > .list > li .up{
+  position: absolute;
+  color: black;
+  width: 0;
+  overflow: hidden;
+}
+#head .headMain > .arrow{
+  position: absolute;
+  left: 50%;
+  bottom: -11px;
+  height: 11px;
+  width: 21px;
+  background: url("../img/menuIndicator.png");
+  transition: 1s left;
+  z-index: 2;
+}
+#head .headMain > nav > .list > li:hover .up{
+  width: 100%;
+  transition: 1s width;
+}
+
+/*音频样式*/
+#head .headMain > .player{
+  width: 14px;
+  height: 14px;
+  background: url("../img/musicon.gif") no-repeat;
+  float: left;
+  margin: 50px 0 0 5px;
+}
+

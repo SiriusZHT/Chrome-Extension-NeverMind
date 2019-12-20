@@ -1,0 +1,205 @@
+#content{
+  /*height: 300px;*/
+  position: relative;
+  background: grey;
+  overflow: hidden;
+  width: 100%;
+}
+#content > .list{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: 1s top;
+  }
+#content > .list >li{
+  position: relative;
+  background-position:50% 50% !important;
+  overflow: hidden;
+}
+#content > .list >li > section{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 1100px;
+  height: 520px;
+
+}
+/*侧边栏小圆点*/
+#content > .listNav{position:absolute;top:50%;right: 5px;margin-top:-50px;}
+#content > .listNav > li{width: 15px;height:15px;border-radius: 50%;cursor: pointer;background: steelblue;margin-top: 5px;
+                          border:3px solid skyblue;}
+#content > .listNav > li.active{background: white;}
+/*第1屏样式start*/
+#content > .list > .home{background: url("../img/bg1.jpg") no-repeat;}
+#content > .list > .home .home1 > li > div{color: white;text-align: center;margin-top: 210px;}
+#content > .list > .home .home1{width: 100%;height: 100%;perspective: 1000px;transform-style: preserve-3d;}
+#content > .list > .home .home1 > li{position:absolute;left: 0;top: 0;bottom:0;right: 0;width: 100%;height: 100%;visibility: hidden;}
+#content > .list > .home .home1 > li.active{visibility: visible;}
+#content > .list > .home .home2 > li.active{background: white;}
+#content > .list > .home .home1 > li:nth-child(1){background: url("../img/four.png") no-repeat;background-size: 100% 100%;}
+#content > .list > .home .home1 > li:nth-child(2){background: url("../img/two.jpg") no-repeat;background-size: 100% 100%;}
+#content > .list > .home .home1 > li:nth-child(3){background: url("../img/three.jpg") no-repeat;background-size: 100% 100%;}
+#content > .list > .home .home1 > li:nth-child(4){background: url("../img/one.png") no-repeat;background-size: 100% 100%;}
+#content > .list > .home .home2{position: absolute;right: 0;left: 0;bottom:0;text-align: center;}
+#content > .list > .home .home2 > li{border-radius:50%;width: 20px;height:20px;background: rgba(255,255,255,0.5);
+                                 display: inline-block;box-shadow: 0 0 4px rgba(25,25,25,0.8);cursor: pointer;}
+/*轮播动画：
+*   从左往右：leftHide rightShow
+*/
+#content > .list > .home .home1 > li.leftHide{visibility: hidden;animation: 1s leftHide 1 linear;}
+#content > .list > .home .home1 > li.rightShow{visibility: visible;animation: 1s rightShow 1 linear;}
+@keyframes leftHide {
+  0%{visibility: visible;}
+  50%{transform: translateX(-40%) rotateY(30deg) scale(.8);}
+  100%{transform: translateZ(-200px);}
+}
+@keyframes rightShow {
+  0%{visibility: hidden;transform: translateZ(-200px);}
+  50%{transform: translateX(40%) rotateY(-30deg) scale(.8);}
+  100%{}
+}
+
+/*从右往左：leftShow rightHide*/
+#content > .list > .home .home1 > li.leftShow{visibility: visible;animation: 1s leftShow 1 linear;}
+#content > .list > .home .home1 > li.rightHide{visibility: hidden;animation: 1s rightHide 1 linear;}
+@keyframes leftShow {
+  0%{visibility: hidden;transform: translateZ(-200px);}
+  50%{transform: translateX(-45%) rotateY(30deg) scale(.8);}
+  100%{}
+}
+@keyframes rightHide {
+  0%{visibility: visible;}
+  50%{transform: translateX(45%) rotateY(-30deg) scale(.8);}
+  100%{transform: translateZ(-200px);}
+}
+
+/*第1屏样式end*/
+/*第2屏样式start*/
+#content > .list > .course{background: url("../img/bg2.jpg") no-repeat;}
+#content > .list > .course .course1{margin: 50px;position:relative;z-index: 2;}
+#content > .list > .course .course2{width: 400px;margin-left: 50px;position:relative;z-index: 2;}
+#content > .list > .course .course3{position:absolute;right: 50px;top: 70px;width: 480px;z-index: 2;}
+#content > .list > .course .course3 .item{ position:relative;width: 120px;height: 132px;float: left;perspective: 500px;transform-style: preserve-3d;}
+#content > .list > .course .course3 .item .back,#content > .list > .course .course3 .item .face{
+          position:absolute;top: 0;left: 0;width: 100%;height: 100%;box-sizing: border-box;padding: 15px;
+  }
+
+#content > .list > .course .course3 .item .face{transform: rotateY(180deg);backface-visibility: hidden;transition: 1s transform;
+                                          background: #009ee0;color: white;text-align: center;}
+#content > .list > .course .course3 .item:hover .face{transform: rotateY(360deg);}
+#content > .list > .course .course3 .item:hover .back{transform: rotateY(180deg);}
+#content > .list > .course .course3 .item .back{background-position: 50% 50%!important;transition: 1s transform;}
+#content > .list > .course .course3 .line{ position:absolute;top: -7px;width: 9px;height: 410px;
+                                      background: url("../img/plus_row.png") no-repeat;}
+#content > .list > .course .course3 .line:nth-of-type(1){left: -5px;}
+#content > .list > .course .course3 .line:nth-of-type(2){left: 115px;}
+#content > .list > .course .course3 .line:nth-of-type(3){left: 235px;}
+#content > .list > .course .course3 .line:nth-of-type(4){left: 355px;}
+#content > .list > .course .course3 .line:nth-of-type(5){left: 475px;}
+#content > .list > .course .course3 .item:nth-of-type(1) .back{background: url("../img/apcoa.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(2) .back{background: url("../img/gu.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(3) .back{background: url("../img/bks.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(4) .back{background: url("../img/gu.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(5) .back{background: url("../img/hlx.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(6) .back{background: url("../img/lbs.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(7) .back{background: url("../img/leonberg.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(8) .back{background: url("../img/apcoa.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(9) .back{background: url("../img/tata.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(10) .back{background: url("../img/leonberg.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(11) .back{background: url("../img/bks.png") no-repeat;}
+#content > .list > .course .course3 .item:nth-of-type(12) .back{background: url("../img/pcwelt.png") no-repeat;}
+/*第2屏样式end*/
+/*第3屏样式start*/
+#content > .list > .works{background: url("../img/bg4.jpg") no-repeat;}
+#content > .list > .works .works1{margin: 50px 0 100px 50px;position: relative;z-index: 2;}
+#content > .list > .works .works2{margin-left: 50px;position: relative;z-index: 2;}
+#content > .list > .works .works3{width: 167px;height: 191px;background: url("../img/robot.png") no-repeat;
+                          position: absolute;left: 900px;top: 170px;animation: works3Move 5s linear infinite;z-index: 2;}
+@keyframes works3Move {
+  0%{transform: translateX(0px) rotateY(0deg)}
+  49%{transform: translateX(-490px) rotateY(0deg);}
+  50%{
+    transform: translateX(-500px) rotateY(180deg);
+  }
+  100%{transform: translateX(0px) rotateY(180deg);}
+}
+#content > .list > .works .works2 > .item{position: relative;margin: 0 1px;float: left;width: 220px;height: 133px;overflow: hidden}
+#content > .list > .works .works2 > .item:last-child{width: 332px;}
+#content > .list > .works .works2 > .item .mask{position: absolute;left: 0;right: 0;top: 0;bottom: 0;background: black;
+                                          box-sizing: border-box;padding: 10px; opacity: 0;color: white;transition: 1s opacity;}
+#content > .list > .works .works2 > .item .mask .icon{width: 32px;height: 34px;margin: 0 auto;margin-top: 10px;
+                                                  background: url("../img/zoomico.png") no-repeat;
+                                                  transition: 0.8s background-position}
+#content > .list > .works .works2 > .item img{transition: 1s transform;}
+
+#content > .list > .works .works2 > .item .mask .icon:hover{background-position:0 -36px; }
+#content > .list > .works .works2 > .item:hover .mask{opacity: 0.8;}
+#content > .list > .works .works2 > .item:hover img{transform: rotate(30deg) scale(1.5);}
+/*第3屏样式end*/
+/*第4屏样式start*/
+#content > .list > .about{background: url("../img/bg3.jpg") no-repeat;}
+#content > .list > .about .about1{margin: 50px 0 100px 50px;}
+#content > .list > .about .about2{width: 400px;margin-left: 50px;}
+#content > .list > .about .about3 > .item{position: absolute;width: 260px;height: 200px;border: 5px solid rgba(255,255,255,0.5);
+                                        z-index:2;border-radius: 8px;overflow: hidden;}
+#content > .list > .about .about3 > .item:nth-of-type(1){left: 750px;top: 50px;}
+/*注意：
+*   1、overflow只能作用于块级元素；
+*   2、scale放大效果是将整个元素一起放大；
+*/
+#content > .list > .about .about3 > .item:nth-of-type(1) > span{background: url("../img/about2.jpg") no-repeat;transform: scale(1.5);}
+#content > .list > .about .about3 > .item:nth-of-type(2){left: 600px;top: 290px;}
+#content > .list > .about .about3 > .item:nth-of-type(2) > span{background: url("../img/about4.jpg") no-repeat;transform: scale(1.5);}
+#content > .list > .about .about3 > .item > span{position: absolute;left: 0;top:0;bottom:0;right:0;transition: 1s transform;}
+#content > .list > .about .about3 > .item > ul{position: absolute;left: 0;top:0;bottom:0;right:0;}
+#content > .list > .about .about4{position:absolute;left: 50%;top: -100px;width: 357px;height: 998px;background: url("../img/greenLine.png") no-repeat;}
+#content > .list > .about .about3 > .item:hover > span{transform: scale(1);}
+#content > .list > .about .about3 > .item > ul > li{float: left;position: relative;overflow: hidden;}
+#content > .list > .about .about3 > .item > ul > li > img{position: absolute;transition: 1s top,1s left;}
+
+/*第4屏样式end*/
+/*第5屏样式start*/
+#content > .list > .team{background: url("../img/bg5.jpg") no-repeat;}
+#content > .list > .team .team1{width:400px;margin: 50px;float: left;}
+#content > .list > .team .team2{width:400px;margin: 50px;float: right;}
+#content > .list > .team .team3{position:absolute;bottom:-178px;left:50%;margin-left:-472px;text-align:center;width:944px;height:448px;}
+#content > .list > .team .team3 > ul{position:relative;width:100%;height:100%;}
+#content > .list > .team .team3 > ul > li{width: 118px;height:100%;background: url("../img/team.png") no-repeat;float: left;transition: 1s opacity;}
+#content > .list > .team .team3 > ul > li:nth-child(1){background-position: 0,0;}
+#content > .list > .team .team3 > ul > li:nth-child(2){background-position: -118px,0;}
+#content > .list > .team .team3 > ul > li:nth-child(3){background-position: -236px,0;}
+#content > .list > .team .team3 > ul > li:nth-child(4){background-position: -354px,0;}
+#content > .list > .team .team3 > ul > li:nth-child(5){background-position: -472px,0;}
+#content > .list > .team .team3 > ul > li:nth-child(6){background-position: -590px,0;}
+#content > .list > .team .team3 > ul > li:nth-child(7){background-position: -708px,0;}
+#content > .list > .team .team3 > ul > li:nth-child(8){background-position: -826px,0;}
+#content > .list > .team .team3 > canvas{position: absolute;top:0px;}
+/*第5屏样式end*/
+
+
+/*出入场动画元素样式*/
+/*第2屏的飞机*/
+#content > .list > .course .plane1{ width:359px; height:283px; background:url("../img/plane1.png") no-repeat; position:absolute;
+                              left:300px; top:-100px; transition:1s transform;}
+#content > .list > .course .plane2{ width:309px; height:249px; background:url("../img/plane2.png") no-repeat; position:absolute;
+                              left:-100px; top:200px; transition:1s transform;}
+#content > .list > .course .plane3{ width:230px; height:182px; background:url("../img/plane3.png") no-repeat; position:absolute;
+                              left:300px; top:400px; transition:1s transform;}
+/*第3屏的铅笔*/
+#content > .list > .works .pencel1{ width:180px; height:97px; background:url("../img/pencel1.png") no-repeat; position:absolute;
+                              transition:1s transform; left:500px; top:0;}
+#content > .list > .works .pencel2{ width:268px; height:38px; background:url("../img/pencel2.png") no-repeat; position:absolute;
+                              transition:1s transform; left:300px; top:250px;}
+#content > .list > .works .pencel3{ width:441px; height:231px; background:url("../img/pencel3.png") no-repeat; position:absolute;
+                              transition:1s transform; left:650px; top:300px;}
+
+/*出入场动画样式*/
+#content > .list > .home .home1,#content > .list > .home .home2{transition: 1s transform,1s opacity;}
+#content > .list > .about .about3 > .item{transition: 1s transform;}
+#content > .list > .team .team1,#content > .list > .team .team2{transition: 1s transform;}
+
+

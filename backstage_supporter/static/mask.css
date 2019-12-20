@@ -1,0 +1,8 @@
+/*开机动画遮罩层样式*/
+#wrap{height: 100%;}
+#mask{height: 100%;width: 100%;position: absolute;z-index: 100;}
+#mask > div{transition: 1s height;}
+#mask > .up{width: 100%;height: 50%;background: deepskyblue;}
+#mask > .down{width: 100%;height: 50%;background: deepskyblue;position: absolute;bottom: 0;}
+#mask > .line{z-index:101;width: 0;height: 4px;background: white;position: absolute;top: 50%;left:0;margin-top: -2px;
+            transition: 1s width;}

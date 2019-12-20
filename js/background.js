@@ -1,5 +1,4 @@
 console.log("######## background #########");
-// 获取当前选项卡ID
 function getCurrentTabId(callback)
 {
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs)

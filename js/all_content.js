@@ -1,8 +1,6 @@
 console.log("######## all_content #########");
-// 监听事件实现页面跳转
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
-        //收到popup的click
         if (request.greeting == "jwc") {
             sendResponse({farewell: "request hello success"});
             console.log('ON CLICK message success');

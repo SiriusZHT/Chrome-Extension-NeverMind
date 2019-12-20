@@ -6,24 +6,21 @@ function sendGreet(greet){
         });
     })
 }
-//点击GO发送数据给content
 document.getElementById('jwc').onclick = function()
 {
-    //保证LS存的值不为空
-    if(document.getElementById('username').value!=null && document.getElementById('password').value!=null){
-        var bg = chrome.extension.getBackgroundPage();
-        bg.writedata(document.getElementById('username').value,document.getElementById('password').value);
-    }
+    // if(document.getElementById('username').value!=null && document.getElementById('password').value!=null){
+    //     var bg = chrome.extension.getBackgroundPage();
+    //     bg.writedata(document.getElementById('username').value,document.getElementById('password').value);
+    // }
     sendGreet("jwc");
 }
 
 document.getElementById('user').onclick = function()
 {
-    //保证LS存的值不为空
-    if(document.getElementById('username').value!=null && document.getElementById('password').value!=null){
-        var bg = chrome.extension.getBackgroundPage();
-        bg.writedata(document.getElementById('username').value,document.getElementById('password').value);
-    }
+    // if(document.getElementById('username').value!=null && document.getElementById('password').value!=null){
+    //     var bg = chrome.extension.getBackgroundPage();
+    //     bg.writedata(document.getElementById('username').value,document.getElementById('password').value);
+    // }
     sendGreet("user");
 }
 

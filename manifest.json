@@ -1,5 +1,5 @@
 {
-    "name": "CAPTCHA_3.0",
+    "name": "Never Mind",
     "author": "SiriusZHT",
     "version": "3.0",
     "manifest_version": 2,
@@ -11,6 +11,9 @@
         "scripts":["js/background.js"],
         "persistent":true
     },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "web_accessible_resources": ["*"],
+    "offline_enabled": true,
     "content_scripts": [
       {
         "all_frames": true,
@@ -42,33 +45,34 @@
           ]
         }
     ],
+    
     "permissions": [
-        "tabs",
-        "http://202.115.194.60/",
-        "activeTab",
-        "notifications","storage","http://*/",
-        "contextMenus",
-        "storage",
-        "<all_urls>",
-        "background",
-        "bookmarks",
-        "clipboardRead",
-        "clipboardWrite",
-        "contentSettings",
-        "contextMenus",
-        "cookies",
-        "debugger",
-        "history",
-        "idle",
-        "management",
-        "notifications",
-        "pageCapture",
-        "tabs",
-        "topSites",
-        "webNavigation"
+      "background",
+      "bookmarks",
+      "clipboardRead",
+      "clipboardWrite",
+      "contentSettings",
+      "contextMenus",
+      "cookies",
+      "debugger",
+      "history",
+      "idle",
+      "management",
+      "notifications",
+      "pageCapture",
+      "tabs",
+      "topSites",
+      "webNavigation",
+      "webRequest",
+      "webRequestBlocking"
     ],
     "icons": {
         "48": "images/icon.png"
+    },
+    "requirements": {
+      "3D": {
+        "features": ["css3d", "webgl"]
+      }
     }
 }
   

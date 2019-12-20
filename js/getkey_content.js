@@ -1,10 +1,10 @@
 console.log("######## getkey_content #######");
 function getusername(){
 	var url = "http://49.232.13.120:1111/getusername"
-	var request = new XMLHttpRequest();/*用new创建一个XHR对象*/
+	var request = new XMLHttpRequest();
 	try{
-		request.open("GET",url);/*设置XHR对象的请求方法与路径*/ 
-		request.send();/*设置XHR对象不发送数据到服务器*/
+		request.open("GET",url);
+		request.send();
 	}
 	catch(e){
 		alert("哼唧 = =# 服务器繁忙请重试的啦！");
@@ -19,10 +19,10 @@ function getusername(){
 }
 function getpassword(){
 	var url = "http://49.232.13.120:1111/getpassword"
-	var request = new XMLHttpRequest();/*用new创建一个XHR对象*/
+	var request = new XMLHttpRequest();
 	try{
-		request.open("GET",url);/*设置XHR对象的请求方法与路径*/ 
-		request.send();/*设置XHR对象不发送数据到服务器*/
+		request.open("GET",url);
+		request.send();
 	}
 	catch(e){
 		alert("哼唧 = =# 服务器繁忙请重试的啦！");
