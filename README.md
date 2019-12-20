@@ -1,5 +1,3 @@
- 😝将[front-end](https://github.com/SiriusZHT/Chrome-extention-NeverMind/tree/master/front-end)文件夹拖入浏览器扩展程序里，即可使用
- 😄[backstage_supporter](https://github.com/SiriusZHT/Chrome-extention-NeverMind/tree/master/backstage_supporter)是后端代码
 # Nerver Mind插件功能
 1.	自动帮助储存用户账号密码
 2.	自动识别验证码图片（服务器验证码图像识别正确率99%）
