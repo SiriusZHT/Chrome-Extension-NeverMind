@@ -1,9 +1,13 @@
 # Nerver Mind插件功能
+
+
 1.	自动帮助储存用户账号密码
 2.	自动识别验证码图片（服务器验证码图像识别正确率99%）
 3.	自动实现信息提交登陆
 4.	能够修改账号密码
 5.	浏览器任何网站上均可一键跳转至登陆成功的页面
+- [Chrome插件源码 ./front-end](./front-end)
+- [图像识别服务器源码 ./backstage_supporte](./backstage_supporter)
 
 
 # Never Mind插件涉及技术
